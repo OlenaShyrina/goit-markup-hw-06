@@ -376,7 +376,7 @@
         </div>
       </section>
 
-    <!-- Модальное окно -->
+      <!-- Модальное окно -->
 
       <div data-modal class="backdrop is-hidden">
         <div class="modal">
@@ -385,29 +385,47 @@
               <use href="./images/icons.svg#icon-close"></use>
             </svg>
           </button>
-          <h2>Оставьте свои данные, мы вам перезвоним</h2>
-          <form action="">
-            <label for=""></label>
-            <input type="text" name="name">
-         
-        
-            <label for=""></label>
-            <input type="text">
-          
-          
-            <label for=""></label>
-            <input type="text">
-        
-         
-            <label for=""></label>
-            <input type="text">
-          </form>
-          <button class="btn-modal" type="button">
-            Отправить
-          </button>
+          <div class="form">
+            <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+            <form action="" class="js-order-form">
+              <div class="form-field">
+                <label for="name">Имя</label>
+                <input type="text" name="name" id="name" />
+              </div>
+
+              <div class="form-field">
+                <label for="tel">Телефон</label>
+                <input type="tel" name="tel" id="tel" />
+              </div>
+
+              <div class="form-field">
+                <label for="mail">Почта</label>
+                <input type="mail" name="mail" id="mail" />
+              </div>
+
+              <div class="form-field comment">
+                <label for="comment">Комментарий</label>
+                <textarea
+                  name="comment"
+                  id="comment"
+                  rows="10"
+                  placeholder="Введите текст"
+                ></textarea>
+              </div>
+
+              <div class="agreement">
+                <input type="checkbox" name="agreement" value="" id="agreement" />
+                <label for="agreement"
+                  >Соглашаюсь с рассылкой и принимаю
+                  <a class="modal-link" href="">Условия договора</a>
+                </label>
+              </div>
+
+              <button class="btn-modal" type="submit">Отправить</button>
+            </form>
+          </div>
         </div>
       </div>
-
     </main>
 
     <!-- Подвал -->
@@ -467,12 +485,12 @@
         <div class="input">
           <p class="input-text">Подпишитесь на рассылку</p>
           <form action="" class="form">
-            <input type="email" name="mail" placeholder="E-mail">
+            <input type="email" name="mail" placeholder="E-mail" />
             <button class="input-btn" type="button">
               Подписаться
-            <svg class="input-icon" width="24" height="24">
-              <use href="./images/icons.svg#icon-send"></use>
-            </svg>
+              <svg class="input-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg>
             </button>
           </form>
         </div>
@@ -480,5 +498,14 @@
     </footer>
 
     <script src="./js/modal.js"></script>
+    <script>
+      (() => {
+        document.querySelector('.js-order-form').addEventListener('submit', e => {
+          e.preventDefault();
+
+          new FormData(e.currentTarget).forEach(value, name => console.log('$(name), $(value)'));
+        });
+      })();
+    </script>
   </body>
 </html>
