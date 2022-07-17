@@ -700,14 +700,15 @@ img {
 
 .modal-form {
   width: 448px;
-  margin-top: 40px;
+
   margin-right: auto;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   margin-left: auto;
 
 }
 
 .modal-title {
+  margin-top: 40px;
   margin-bottom: 12px;
 
   font-weight: 700;
@@ -720,6 +721,8 @@ img {
 }
 
 .form-field {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
@@ -735,7 +738,7 @@ img {
 
 .form-field input {
   margin: 0;
-  padding: 10px 11px;
+  padding: 11px 42px;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
@@ -745,8 +748,22 @@ img {
 
 .form-field input:hover,
 .form-field input:focus {
-  border: 1px solid var(--accent-color);
+  outline: 1px solid var(--accent-color);
   cursor: pointer;
+
+}
+
+.form-field input:hover + .icon-modal,
+.form-field input:focus + .icon-modal {
+  fill: var(--accent-color);
+}
+
+.icon-modal {
+ position: absolute;
+ left: 12px;
+ top: 29px;
+
+ transition: fill 250ms var(--cubic);
 }
 
 .comment {
@@ -755,55 +772,116 @@ img {
 }
 
 .form-field textarea {
-  padding: 12px 16px;
+  padding: 11px 15px;
 
-  border: 1px solid rgba(33, 33, 33, 0.2);
+  outline: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition: outline 250ms var(--cubic);
 }
 
 .form-field input::placeholder {
   font-size: 12px;
-line-height: 1.17;
-letter-spacing: 0.01em;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
 
-color: rgba(117, 117, 117, 0.5);
+  color: rgba(117, 117, 117, 0.5);
+
+}
+
+.form-field textarea:hover,
+.form-field textarea:focus {
+  outline: 1px solid var(--accent-color);
+  cursor: pointer;
+}
+
+.label {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  margin-left: 54px;
+
+  line-height: 1.71;
+  
+}
+
+.checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  position: absolute;
 
 }
 
 .agreement {
-  margin-bottom: 30px;
+  margin-left: 8px;
 }
 
-.agreement label {
-margin-left: 8px;
-line-height: 1.71;
+.icon-active {
+  position: absolute;
+  top: 5px;
+  left: 0;
+
+
+  padding: 4px 2px 3px 3px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+
+  opacity:0;
+
+  transition: opacity 250ms var(--cubic);
+}
+
+.checkbox:checked + .icon-active {
+  opacity: 1;
+}
+
+.icon-nonactive {
+  opacity: 1;
+
+  transition: opacity 250ms var(--cubic)
+}
+
+.checkbox:checked ~ .icon-nonactive {
+  opacity: 0;
 }
 
 .modal-link {
 
-text-decoration-line: underline;
 color: var(--accent-color);
 }
+
+
 
 .btn-send {
   position: relative;
   left: 50%;
   transform: translate(-50%, 0);
 
-  padding: 10px 55px 10px 58px;
+  padding: 10px 55px 10px 56px;
+  margin-bottom: 40px;
 
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
   text-align: center;
   letter-spacing: 0.06em;
   color: var(--basic-white);
 
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border: none;
   border-radius: 4px;
+
+  transition: background-color 250ms var(--cubic);
 }
 
 .btn-send:hover,
 .btn-send:focus {
+  background-color: #188CE8;
   cursor: pointer;
 }
 

@@ -385,22 +385,32 @@
               <use href="./images/icons.svg#icon-close"></use>
             </svg>
           </button>
-          <div class="modal-form">
-            <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
-            <form action="" class="js-order-form">
+            
+            <form action="">
+              <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+            <div action="" class="modal-form">
               <div class="form-field">
                 <label for="name">Имя</label>
                 <input type="text" name="name" id="name" />
+                <svg class="icon-modal" width="18" height="18">
+                  <use href="./images/icons.svg#icon-person"></use>
+                </svg>
               </div>
 
               <div class="form-field">
                 <label for="tel">Телефон</label>
                 <input type="tel" name="tel" id="tel" />
+                <svg class="icon-modal" width="18" height="18">
+                  <use href="./images/icons.svg#icon-phone"></use>
+                </svg>
               </div>
 
               <div class="form-field">
                 <label for="mail">Почта</label>
                 <input type="mail" name="mail" id="mail" />
+                <svg class="icon-modal" width="18" height="18">
+                  <use href="./images/icons.svg#icon-email"></use>
+                </svg>
               </div>
 
               <div class="form-field comment">
@@ -412,18 +422,23 @@
                   placeholder="Введите текст"
                 ></textarea>
               </div>
+            </div>
 
-              <div class="agreement">
-                <input type="checkbox" name="agreement" value="" id="agreement" />
-                <label for="agreement"
-                  >Соглашаюсь с рассылкой и принимаю
-                  <a class="modal-link" href="">Условия договора</a>
-                </label>
-              </div>
+                <label class="label" for="agreement">
+                  <input class="checkbox" type="checkbox" name="agreement" value="" id="agreement"/>
+                  <svg class="icon-active" width="16" height="15">
+                    <use href="./images/icons.svg#icon-active"></use>
+                  </svg>
+                  <svg class="icon-nonactive" width="16" height="15">
+                    <use href="./images/icons.svg#icon-nonactive"></use>
+                  </svg>
+                 <div class="agreement">Соглашаюсь с рассылкой и принимаю <a class="modal-link" href="">Условия договора</a></div>
+                </label> 
 
               <button class="btn-send" type="submit">Отправить</button>
+           
             </form>
-          </div>
+
         </div>
       </div>
     </main>
@@ -498,14 +513,6 @@
     </footer>
 
     <script src="./js/modal.js"></script>
-    <script>
-      (() => {
-        document.querySelector('.js-order-form').addEventListener('submit', e => {
-          e.preventDefault();
-
-          new FormData(e.currentTarget).forEach(value, name => console.log('$(name), $(value)'));
-        });
-      })();
     </script>
   </body>
 </html>
