@@ -386,9 +386,9 @@
             </svg>
           </button>
             
-            <form action="">
+            <form>
               <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
-            <div action="" class="modal-form">
+            <div class="modal-form">
               <div class="form-field">
                 <label for="name">Имя</label>
                 <input type="text" name="name" id="name" />
@@ -407,7 +407,7 @@
 
               <div class="form-field">
                 <label for="mail">Почта</label>
-                <input type="mail" name="mail" id="mail" />
+                <input type="email" name="mail" id="mail" />
                 <svg class="icon-modal" width="18" height="18">
                   <use href="./images/icons.svg#icon-email"></use>
                 </svg>
@@ -418,22 +418,21 @@
                 <textarea
                   name="comment"
                   id="comment"
-                  rows="6"
                   placeholder="Введите текст"
                 ></textarea>
               </div>
             </div>
 
-                <label class="label" for="agreement">
-                  <input class="checkbox" type="checkbox" name="agreement" value="" id="agreement"/>
+                <div class="agreement">
+                  <input class="checkbox" type="checkbox" name="checkbox" value="" id="checkbox"/>
                   <svg class="icon-active" width="16" height="15">
                     <use href="./images/icons.svg#icon-active"></use>
                   </svg>
                   <svg class="icon-nonactive" width="16" height="15">
                     <use href="./images/icons.svg#icon-nonactive"></use>
                   </svg>
-                 <div class="agreement">Соглашаюсь с рассылкой и принимаю <a class="modal-link" href="">Условия договора</a></div>
-                </label> 
+                 <label class="label" for="checkbox">Соглашаюсь с рассылкой и принимаю <a class="modal-link" href="">Условия договора</a></label>
+                </div> 
 
               <button class="btn-send" type="submit">Отправить</button>
            
@@ -499,7 +498,7 @@
         <!-- Форма подписки -->
         <div class="input">
           <p class="input-text">Подпишитесь на рассылку</p>
-          <form action="" class="form">
+          <form class="form">
             <input type="email" name="mail" placeholder="E-mail" />
             <button class="input-btn" type="button">
               Подписаться
@@ -513,6 +512,6 @@
     </footer>
 
     <script src="./js/modal.js"></script>
-    </script>
+   
   </body>
 </html>

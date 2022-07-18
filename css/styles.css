@@ -658,7 +658,9 @@ img {
   top: 50%;
 
   width: 528px;
-  height: 581px;
+
+  padding: 40px;
+  
   background-color: var(--basic-white);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -699,16 +701,13 @@ img {
 /* Form */
 
 .modal-form {
-  width: 448px;
 
-  margin-right: auto;
   margin-bottom: 20px;
-  margin-left: auto;
 
 }
 
 .modal-title {
-  margin-top: 40px;
+
   margin-bottom: 12px;
 
   font-weight: 700;
@@ -766,16 +765,21 @@ img {
  transition: fill 250ms var(--cubic);
 }
 
+/* Textarea */
+
 .comment {
   margin-bottom: 20px;
 
 }
 
 .form-field textarea {
+  height: 120px;
   padding: 11px 15px;
 
   outline: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  resize: none;
 
   transition: outline 250ms var(--cubic);
 }
@@ -795,13 +799,16 @@ img {
   cursor: pointer;
 }
 
-.label {
+
+/* Checkbox */
+
+.agreement {
   position: relative;
 
   display: flex;
+  justify-content: center;
   align-items: center;
   margin-bottom: 30px;
-  margin-left: 54px;
 
   line-height: 1.71;
   
@@ -816,14 +823,14 @@ img {
 
 }
 
-.agreement {
-  margin-left: 8px;
+.label {
+  margin-left: 7px;
 }
 
 .icon-active {
   position: absolute;
   top: 5px;
-  left: 0;
+  left: 12px;
 
 
   padding: 4px 2px 3px 3px;
@@ -854,7 +861,7 @@ img {
 color: var(--accent-color);
 }
 
-
+/* Button send */
 
 .btn-send {
   position: relative;
@@ -862,7 +869,6 @@ color: var(--accent-color);
   transform: translate(-50%, 0);
 
   padding: 10px 55px 10px 56px;
-  margin-bottom: 40px;
 
   font-weight: 700;
   font-size: 16px;
